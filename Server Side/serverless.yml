@@ -1,0 +1,26 @@
+service: slsweb
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+
+
+functions:
+  app:
+    handler: app.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+
+plugins:
+  - serverless-plugin-lambda-warmup
+
+custom:
+  warmup:
+    schedule: 'rate(5 minutes)' # [Optional] Schedule expression for the rule (defaults to "rate(5 minutes)") 
+    stages: # [Optional] Stages to keep lambdas warm (all stages by default) 
+      - dev
+    payload: # [Optional] Event payload (defaults to "{ source: 'serverless-plugin-lambda-warmup' }") 
+      type: 'warmup'

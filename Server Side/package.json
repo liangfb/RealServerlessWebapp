@@ -1,0 +1,25 @@
+{
+  "name": "slsweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.3",
+    "express": "^4.16.4",
+    "jade": "~1.11.0",
+    "mongoose": "^4.11.6",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2",
+    "serverless-http": "^1.8.0",
+    "serverless-plugin-lambda-warmup": "^1.0.1"
+  }
+}
